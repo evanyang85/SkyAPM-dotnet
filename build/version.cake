@@ -75,19 +75,6 @@ public class BuildParameters
 		versionQuality = string.IsNullOrWhiteSpace(versionQuality) ? null : versionQuality;
 
 		var suffix = versionQuality;
-		if (!IsTagged)
-		{
-			var buildSystem = Context.BuildSystem();
-			if (buildSystem.IsRunningOnAppVeyor && buildSystem.AppVeyor.Environment.Repository.Branch == "master")
-			{
-				suffix += "prerelease-" + Util.CreateStamp();
-			} 
-			else
-			{
-				suffix += (IsCI ? "preview-" : "dev-") + Util.CreateStamp();
-			}
-		}
-		suffix = string.IsNullOrWhiteSpace(suffix) ? null : suffix;
 
 		Version =
 			new BuildVersion(int.Parse(versionMajor), int.Parse(versionMinor), int.Parse(versionPatch), versionQuality);
