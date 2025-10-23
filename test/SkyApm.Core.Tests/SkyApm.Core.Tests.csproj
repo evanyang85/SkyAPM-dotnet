@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
@@ -12,5 +11,6 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <ProjectReference Include="..\..\src\SkyApm.Core\SkyApm.Core.csproj" />
+        <ProjectReference Include="..\..\src\SkyApm.Utilities.Logging\SkyApm.Utilities.Logging.csproj" />
     </ItemGroup>
 </Project>
